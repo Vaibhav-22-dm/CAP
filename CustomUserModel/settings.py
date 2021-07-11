@@ -100,7 +100,18 @@ DATABASES = {
     'default':{
         'ENGINE':'django.db.backends.mysql',
         'NAME': 'CAP',
-        'USERNAME': 'root',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+        'OPTIONS': {
+        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
+    },
+    'EAD_db':{
+        'ENGINE':'django.db.backends.mysql',
+        'NAME': 'EAD',
+        'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '',
@@ -108,31 +119,20 @@ DATABASES = {
         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
     },
-    # 'EAD_db':{
-    #     'ENGINE':'django.db.backends.mysql',
-    #     'NAME': 'EAD',
-    #     'USERNAME': 'root',
-    #     'PASSWORD': '',
-    #     'HOST': '127.0.0.1',
-    #     'PORT': '',
-    #     'OPTIONS': {
-    #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-    #     }
-    # },
-    # 'GES_db':{
-    #     'ENGINE':'django.db.backends.mysql',
-    #     'NAME': 'GES',
-    #     'USERNAME': 'root',
-    #     'PASSWORD': '',
-    #     'HOST': '127.0.0.1',
-    #     'PORT': '',
-    #     'OPTIONS': {
-    #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-    #     }
-    # }
+    'GES_db':{
+        'ENGINE':'django.db.backends.mysql',
+        'NAME': 'GES',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '',
+        'OPTIONS': {
+        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
+    }
 }
 
-DATABASE_ROUTERS =['routers.db_routers.AuthRouter', 'routers.db_routers.GESRouter'] #AuthRouter is a class
+DATABASE_ROUTERS =['routers.db_routers.AuthRouter', 'routers.db_routers.GESRouter','routers.db_routers.EADRouter'] #AuthRouter is a class
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
