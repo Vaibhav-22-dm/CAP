@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+</head>
+<body>
+    <!-- enctype="multipart/form-data" -->
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="box_1">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+            <label for="name">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="code">Referral Code</label>
+            <input type="text" name="code" id="code">
+            <div><button type="submit">Submit</button></div>
+            {% if flag == 1 %}
+                {{success_msg}}
+            {% else %}
+                {{error_msg}}
+            {% endif %}
+        </div>
+    </form>
+</body>
+</html>

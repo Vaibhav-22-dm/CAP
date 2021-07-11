@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="box_1">
+            <div>First Name</div>
+            {{form.first_name}}
+            <div>Middle Name</div>
+            {{form.middle_name}}
+            <div>Last Name</div>
+            {{form.last_name}}
+            <div>Email</div>
+            {{form.email}}
+            <div>Password</div>
+            {{form.password1}}
+            <div>Confirm Password</div>
+            {{form.password2}}
+            <!-- <div ><button id="next" type="none">Next</button></div>
+        </div>
+        <!-- <div class="box_2" style="display: none;"> -->
+        <div>
+            <div>City</div>
+            {{form.city}}
+            <div>College</div>
+            {{form.college}}
+            <div>Phone</div>
+            {{form.phone}}
+            <div>Facebook Profile Link</div>
+            {{form.facebook}}
+            <div>Linkedin Profile Link</div>
+            {{form.linkedin}}
+            <div>Image</div>
+            {{form.image}}
+            <div> <button type="submit">Submit</button></div>
+        </div>
+        
+        
+        
+        
+
+        {% if flag %}
+            <p style="color:red;">{{error}}</p>
+        {% else %}
+            <a href="{% url 'loginPage' %}">Login</a>
+        {% endif %}
+    </form>
+</body>
+<script>
+    // document.querySelector('.next').addEventListener('click', ()=>{
+    //     doument.querySelector('.box_1').style.display = 'none';
+    //     doument.querySelector('.box_2').style.display = 'block';
+    // });
+</script>
+</html>
